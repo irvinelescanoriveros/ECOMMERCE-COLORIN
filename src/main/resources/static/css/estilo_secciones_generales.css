@@ -1,0 +1,115 @@
+/* 
+SECCIONES GENERALES
+*/
+.section {
+    padding: 80px 40px;
+}
+
+.section_2 {
+    padding: 10px 40px;
+}
+
+.section_contentido {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section_titulo {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
+    animation: aparecer 1s ease;
+}
+
+.section_descripcion {
+    color: #ffffff;
+    font-size: 1.04rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+INICIO
+*/
+.section_Inicio {
+    background: linear-gradient(rgba(22, 66, 163, 0.5), rgba(49, 81, 243, 0.5)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 25px 0;
+    cursor: default;
+}
+
+/* 
+CATÁLOGO
+*/
+.section_content_1 {
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.section_titulo_1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_1 {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.section_content_1_2 {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.section_titulo_1_2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_1_2 {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.section_ver_catalogo {
+    margin-right: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ver_catalogo {
+    text-decoration: none;
+    font-weight: 600;
+    text-decoration-color: #2563eb;
+}
+
+.ver_catalogo:hover {
+    color: #3730a3;
+}
+
+.catalogo_Madre {
+    margin: 0px 60px 0px 75px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    cursor: default;
+}
+
+.catalogo_Madre_2 {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    gap: 25px;
+    cursor: default;
+}

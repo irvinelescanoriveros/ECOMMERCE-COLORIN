@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Ferretería Colorín</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilo_global.css">
+    <link rel="stylesheet" href="css/estilo_header.css">
+    <link rel="stylesheet" href="css/estilo_animaciones.css">
+    <link rel="stylesheet" href="css/estilo_secciones_generales.css">
+    <link rel="stylesheet" href="css/estilo_beneficios.css">
+    <link rel="stylesheet" href="css/estilo_seccion_nosotros.css">
+    <link rel="stylesheet" href="css/estilo_seccion_destacados.css">
+    <link rel="stylesheet" href="css/estilo_seccion_catalago.css">
+    <link rel="stylesheet" href="css/estilo_seccion_catalago_tabla.css">
+    <link rel="stylesheet" href="css/estilo_botones.css">
+    <link rel="stylesheet" href="css/estilo_seccion_contacto.css">
+    <link rel="stylesheet" href="css/estilo_seccion_footer.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_compra.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_productos.css">
+    <link rel="stylesheet" href="css/estilo_modal.css">
+    <link rel="stylesheet" href="css/reponsive.css">
+    <link rel="stylesheet" href="css/estilo_colorin_tienda.css">
+
+    <link rel="icon" href="img/Logo_Chip.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="js/header.js" defer></script>
+    <script src="js/menu_categorias.js" defer></script>
+    <script src="js/catalogo_colorin.js" defer></script>
+    <script src="js/catalogo.js" defer></script>
+    <script src="js/carro_de_compras.js" defer></script>
+
+</head>
+
+<body>
+<body data-page="catalogo">
+<div id="site-header"></div>
+
+<main class="site-main"><!-- CATALAGO COMPLETO -->
+    <section id="catalogo_completo" class="section_2">
+
+        <div class="section_content_1_2">
+            <h2 class="section_titulo_1_2">Catálogo de Ferretería Colorín</h2>
+            <p class="section_descripcion_1_2">Encuentra herramientas, pinturas y artículos de ferretería con stock disponible.</p>
+            <div class="linea2"></div>
+            <!-- VISTAS -->
+            <div class="vista">
+                <button class="activo" onclick="cambiarVista('grid')">⬜ Catálogo</button>
+                <button onclick="cambiarVista('tabla')">☰ Tabla</button>
+            </div>
+        </div>
+        <div class="catalogo_controls">
+            <div class="controls_izquierda">
+                <!-- BUSCADOR -->
+                <div class="buscador_box">
+                    <input type="text" id="buscador" placeholder="Buscar por nombre, código o marca...">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="catalogo-ruta" class="catalogo-ruta" hidden><span class="ruta-icono"><i class="fa-solid fa-list"></i></span><span id="catalogo-ruta-texto"></span><a href="catalogo.html" aria-label="Quitar filtro de categoría">Quitar filtro <i class="fa-solid fa-xmark"></i></a></div>
+
+        <div class="catalogo_Madre_2" id="productos_colorin_grid"></div>
+        <div id="catalogo-sin-resultados" class="catalogo-sin-resultados" hidden><span><i class="fa-solid fa-box-open"></i></span><h2>Aún no tenemos productos en esta categoría</h2><p>Estamos organizando el catálogo. Explora otra categoría o revisa todos los productos.</p><a href="catalogo.html">Ver todos los productos</a></div>
+
+        <!-- Tabla Catalago -->
+        <div id="vista_tabla" style="display: none;">
+            <div class="table-wrapper">
+                <table class="productos_tabla">
+                    <thead class="productos_tabla_head">
+                        <tr class="productos_tabla_head">
+                            <th class="productos_tabla_header" scope="col">
+                                <div class="linea2"></div>
+                            </th>
+                            <th class="productos_tabla_header" scope="col">Producto</th>
+                            <th class="productos_tabla_header" scope="col">Categoria</th>
+                            <th class="productos_tabla_header" scope="col">Precio</th>
+                            <th class="productos_tabla_header" scope="col">Stock</th>
+                            <th class="productos_tabla_header" scope="col"><i class="fa-solid fa-cart-shopping"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="productos_tabla_row_body" id="productos_colorin_tabla"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    </main>
+<div id="site-footer"></div>
+<div id="site-cart"></div>
+</body>
+</html>

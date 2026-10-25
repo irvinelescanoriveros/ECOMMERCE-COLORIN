@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta | Ferretería Colorín</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilo_global.css">
+    <link rel="stylesheet" href="css/estilo_header.css">
+    <link rel="stylesheet" href="css/estilo_seccion_footer.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_compra.css">
+    <link rel="stylesheet" href="css/estilo_modal.css">
+    <link rel="stylesheet" href="css/reponsive.css">
+    <link rel="stylesheet" href="css/estilo_cuenta.css">
+    <link rel="stylesheet" href="css/estilo_colorin_tienda.css">
+    <link rel="stylesheet" href="css/estilo_botones.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_productos.css">
+    <link rel="icon" href="img/Logo_Chip.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/menu_categorias.js" defer></script>
+    <script src="js/carro_de_compras.js" defer></script>
+    <script src="js/cuenta.js" defer></script>
+</head>
+<body data-page="cuenta">
+    <div id="site-header"></div>
+    <main class="site-main cuenta-main">
+        <section id="cuenta-acceso" class="cuenta-seccion cuenta-acceso">
+            <div class="cuenta-intro">
+                <span class="cuenta-icono"><i class="fa-regular fa-user"></i></span>
+                <h1>Tu cuenta Colorín</h1>
+                <p>Ingresa para revisar tus pedidos y administrar tus datos.</p>
+            </div>
+            <p id="checkout-login-notice" class="cuenta-mensaje" role="status" aria-live="polite" hidden>Para continuar con tu compra, inicia sesión o crea una cuenta. Tu carrito se conservará.</p>
+            <div class="cuenta-tabs" role="tablist" aria-label="Acceso a la cuenta">
+                <button id="tab-ingresar" type="button" class="cuenta-tab activo" role="tab" aria-selected="true" data-cuenta-tab="ingresar">Iniciar sesión</button>
+                <button id="tab-registrar" type="button" class="cuenta-tab" role="tab" aria-selected="false" data-cuenta-tab="registrar">Crear cuenta</button>
+            </div>
+            <section class="cuenta-panel" data-cuenta-panel="ingresar" aria-labelledby="tab-ingresar">
+                <h2>¡Qué bueno verte!</h2>
+                <p>Ingresa con el correo electrónico que usaste al registrarte.</p>
+                <form id="form-iniciar-sesion" class="cuenta-form">
+                    <label for="login-correo">Correo electrónico</label>
+                    <input id="login-correo" name="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" required>
+                    <label for="login-password">Contraseña</label>
+                    <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" required>
+                    <button class="cuenta-olvido" type="button" id="btn-olvido">¿Olvidaste tu contraseña?</button>
+                    <button class="cuenta-boton" type="submit">Iniciar sesión</button>
+                    <p class="cuenta-mensaje" id="login-mensaje" role="status" aria-live="polite"></p>
+                </form>
+                <div class="cuenta-separador"><span>o</span></div>
+                <button class="cuenta-google" type="button" data-google-demo><i class="fa-brands fa-google"></i> Continuar con Google</button>
+                <p class="cuenta-pie-acceso">¿No tienes una cuenta? <button type="button" data-ir-registro>Regístrate</button></p>
+            </section>
+            <section class="cuenta-panel" data-cuenta-panel="registrar" aria-labelledby="tab-registrar" hidden>
+                <h2>Crea tu cuenta</h2>
+                <p>Regístrate con tu correo y una contraseña para entrar a tu cuenta.</p>
+                <form id="form-registrar-cliente" class="cuenta-form">
+                    <label for="registro-correo">Correo electrónico</label>
+                    <input id="registro-correo" name="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" required>
+                    <div class="cuenta-datos-grid">
+                        <div><label for="registro-password">Contraseña</label><input id="registro-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required></div>
+                        <div><label for="registro-password-confirmar">Confirma tu contraseña</label><input id="registro-password-confirmar" name="passwordConfirmar" type="password" autocomplete="new-password" minlength="8" placeholder="Repite la contraseña" required></div>
+                    </div>
+                    <label class="cuenta-check"><input id="registro-acepta" type="checkbox" required><span>Acepto las <a href="#condiciones" id="link-condiciones">condiciones de uso</a> y la política de privacidad.</span></label>
+                    <button class="cuenta-boton" type="submit">Crear mi cuenta</button>
+                    <p class="cuenta-mensaje" id="registro-mensaje" role="status" aria-live="polite"></p>
+                </form>
+                <p class="cuenta-pie-acceso">¿Ya tienes una cuenta? <button type="button" data-ir-login>Inicia sesión</button></p>
+                <p class="cuenta-nota">Tu cuenta se guarda en la base de datos con la contraseña protegida.</p>
+            </section>
+        </section>
+
+        <section id="cuenta-panel-cliente" class="cliente-dashboard" hidden>
+            <aside class="cliente-sidebar">
+                <div class="cliente-resumen"><span class="cliente-avatar"><i class="fa-regular fa-user"></i></span><div><small>Mi cuenta</small><strong id="cliente-email-resumen">cliente@correo.com</strong></div></div>
+                <nav class="cliente-nav" aria-label="Secciones de mi cuenta">
+                    <button class="cliente-nav-item activo" data-cliente-vista="perfil"><i class="fa-regular fa-id-card"></i> Mi perfil</button>
+                    <button class="cliente-nav-item" data-cliente-vista="pedidos"><i class="fa-solid fa-box"></i> Mis pedidos</button>
+                    <button class="cliente-nav-item" data-cliente-vista="direcciones"><i class="fa-solid fa-location-dot"></i> Direcciones</button>
+                    <button class="cliente-nav-item cliente-salir" id="btn-cerrar-sesion"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+                </nav>
+            </aside>
+            <div class="cliente-contenido">
+                <section class="cliente-vista" data-cliente-panel="perfil">
+                    <div class="cliente-vista-titulo"><div><span class="section-kicker">TUS DATOS</span><h1>Mi perfil</h1><p>Completa tu información para facilitar tus compras.</p></div></div>
+                    <form id="form-perfil" class="perfil-form">
+                        <div class="perfil-dni-fila"><div><label for="perfil-dni">DNI <small>(opcional)</small></label><input id="perfil-dni" name="dni" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="8 dígitos"></div><button id="btn-buscar-dni" class="cuenta-boton cuenta-boton-secundario" type="button">Completar con DNI</button></div>
+                        <p id="perfil-dni-mensaje" class="cuenta-mensaje" role="status" aria-live="polite"></p>
+                        <div class="cuenta-datos-grid">
+                            <div><label for="perfil-nombre">Nombres</label><input id="perfil-nombre" name="nombre" autocomplete="given-name" placeholder="Tus nombres"></div>
+                            <div><label for="perfil-apellidos">Apellidos</label><input id="perfil-apellidos" name="apellidos" autocomplete="family-name" placeholder="Tus apellidos"></div>
+                            <div><label for="perfil-genero">Género</label><select id="perfil-genero" name="genero"><option value="">Prefiero no indicarlo</option><option>Femenino</option><option>Masculino</option><option>Otro</option></select></div>
+                            <div><label for="perfil-nacimiento">Fecha de nacimiento</label><input id="perfil-nacimiento" name="fechaNacimiento" type="date"></div>
+                            <div class="cuenta-campo-completo"><label for="perfil-telefono">Teléfono</label><input id="perfil-telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Tu número de contacto"></div>
+                        </div>
+                        <button class="cuenta-boton perfil-guardar" type="submit">Guardar cambios</button><p id="perfil-mensaje" class="cuenta-mensaje" role="status" aria-live="polite"></p>
+                    </form>
+                </section>
+                <section class="cliente-vista" data-cliente-panel="pedidos" hidden>
+                    <div class="cliente-vista-titulo"><div><span class="section-kicker">SEGUIMIENTO</span><h1>Mis pedidos</h1><p>Consulta el estado de tus compras.</p></div></div>
+                    <div class="pedido-tabs" role="tablist" aria-label="Filtrar pedidos"><button class="activo" data-pedido-filtro="todos">Todos</button><button data-pedido-filtro="curso">En curso</button><button data-pedido-filtro="entregados">Entregados</button><button data-pedido-filtro="cancelados">Cancelados</button></div>
+                    <p id="pedidos-mensaje" class="cuenta-mensaje" role="status" aria-live="polite"></p>
+                    <div id="pedidos-vacios" class="pedidos-vacios"><span><i class="fa-solid fa-box-open"></i></span><h2>Aún no tienes pedidos</h2><p>Cuando realices una compra, podrás seguirla desde aquí.</p><a href="catalogo.html" class="cuenta-boton">Explorar catálogo</a></div>
+                    <div id="pedidos-lista" class="pedidos-lista" aria-live="polite"></div>
+                </section>
+                <section class="cliente-vista" data-cliente-panel="direcciones" hidden>
+                    <div class="cliente-vista-titulo"><div><span class="section-kicker">ENTREGA</span><h1>Mis direcciones</h1><p>Guarda los lugares donde quieres recibir tus pedidos.</p></div><button class="cuenta-boton" id="btn-agregar-direccion" type="button"><i class="fa-solid fa-plus"></i> Agregar dirección</button></div>
+                    <p id="direcciones-mensaje" class="cuenta-mensaje" role="status" aria-live="polite"></p>
+                    <div id="direcciones-lista" class="direcciones-lista"><div class="direcciones-vacias"><i class="fa-solid fa-location-dot"></i><p>Aún no agregaste una dirección.</p><small>Podrás guardarla para usarla en tus próximos pedidos.</small></div></div>
+                    <form id="form-direccion" class="perfil-form form-direccion" hidden>
+                        <h2>Nueva dirección</h2><label for="direccion-etiqueta">Nombre para identificarla</label><input id="direccion-etiqueta" name="etiqueta" placeholder="Casa, trabajo…" required>
+                        <label for="direccion-detalle">Dirección</label><input id="direccion-detalle" name="direccion" autocomplete="street-address" placeholder="Av., calle, número" required>
+                        <div class="cuenta-datos-grid"><div><label for="direccion-departamento">Departamento</label><input id="direccion-departamento" name="departamento" required></div><div><label for="direccion-provincia">Provincia</label><input id="direccion-provincia" name="provincia" required></div></div>
+                        <div class="cuenta-datos-grid"><div><label for="direccion-distrito">Distrito</label><input id="direccion-distrito" name="distrito" required></div><div><label for="direccion-piso">Piso y/o departamento</label><input id="direccion-piso" name="pisoDepartamento" placeholder="Opcional"></div></div>
+                        <label for="direccion-referencia">Referencia</label><input id="direccion-referencia" name="referencia" placeholder="Cerca de…">
+                        <div class="direccion-botones"><button class="cuenta-boton" type="submit">Guardar dirección</button><button class="cuenta-boton cuenta-boton-secundario" id="btn-cancelar-direccion" type="button">Cancelar</button></div>
+                    </form>
+                </section>
+                <p class="cuenta-nota cliente-nota">El perfil, las direcciones y los pedidos todavía son de demostración.</p>
+            </div>
+        </section>
+    </main>
+    <div id="modal-condiciones" class="modal"><div class="modal-content"><div class="modal-header"><h3>Condiciones y privacidad</h3><button class="modal-close" data-close="modal-condiciones" aria-label="Cerrar">&times;</button></div><p>En la tienda real, estas condiciones explicarán el uso y la protección de tus datos personales. Esta sección es una vista de demostración.</p><div class="modal-actions"><button class="btn-modal btn-confirmar" data-close="modal-condiciones">Entendido</button></div></div></div>
+    <div id="site-footer"></div>
+    <div id="site-cart"></div>
+</body>
+</html>

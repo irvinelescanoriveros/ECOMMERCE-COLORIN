@@ -1,0 +1,81 @@
+/* 
+CATALAGO COMPLETO
+*/
+.catalogo_controls {
+    padding: 10px 16px;
+    margin: 0px 100px 25px 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    background: white;
+    border-radius: 15px;
+}
+
+/* IZQUIERDA */
+.controls_izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+/* BUSCADOR */
+.buscador_box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    width: 520px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.buscador_box .icono {
+    margin-right: 10px;
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+#buscador {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 15px;
+}
+
+.buscador_box:focus-within {
+    border: 1px solid #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* FILTROS*/
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.filtros button {
+    border: 1px solid #e2e1e1;
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.filtros button:hover {
+    background: #e5e7eb;
+}
+
+.filtros button.activo {
+    background: #6366f1;
+    color: white;
+    border: none;
+}

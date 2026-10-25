@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Ferretería Colorín</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilo_global.css">
+    <link rel="stylesheet" href="css/estilo_header.css">
+    <link rel="stylesheet" href="css/estilo_animaciones.css">
+    <link rel="stylesheet" href="css/estilo_secciones_generales.css">
+    <link rel="stylesheet" href="css/estilo_beneficios.css">
+    <link rel="stylesheet" href="css/estilo_seccion_nosotros.css">
+    <link rel="stylesheet" href="css/estilo_seccion_destacados.css">
+    <link rel="stylesheet" href="css/estilo_seccion_catalago.css">
+    <link rel="stylesheet" href="css/estilo_seccion_catalago_tabla.css">
+    <link rel="stylesheet" href="css/estilo_botones.css">
+    <link rel="stylesheet" href="css/estilo_seccion_contacto.css">
+    <link rel="stylesheet" href="css/estilo_seccion_footer.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_compra.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_productos.css">
+    <link rel="stylesheet" href="css/estilo_modal.css">
+    <link rel="stylesheet" href="css/reponsive.css">
+    <link rel="stylesheet" href="css/estilo_colorin_tienda.css">
+
+    <link rel="icon" href="img/Logo_Chip.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="js/header.js" defer></script>
+    <script src="js/menu_categorias.js" defer></script>
+    <script src="js/carro_de_compras.js" defer></script>
+    <script src="js/contacto.js" defer></script>
+
+</head>
+
+<body>
+<body data-page="contacto">
+<div id="site-header"></div>
+
+<main class="site-main"><!-- SECCIÓN: CONTACTO -->
+    <section id="contacto" class="section section_contacto">
+        <div class="section_content_3">
+            <h2 class="section_titulo_3">Contáctanos</h2>
+            <p class="section_descripcion_3">Envíanos tus consultas y te responderemos a la brevedad.</p>
+            <div class="linea"></div>
+        </div>
+
+        <section class="section_contacto">
+            <div class="contacto_container">
+
+                <div class="contacto_info">
+
+                    <div class="info_card">
+                        <div class="info_icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="info_text">
+                            <h3>Escríbenos</h3>
+                            <p>Soporte 24/7</p>
+                            <a href="mailto:soporte@techstore.com">soporte@techstore.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info_card">
+                        <div class="info_icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="info_text">
+                            <h3>Llámanos</h3>
+                            <p>Lunes a Viernes 9am - 6pm</p>
+                            <a href="tel:+51987654321">+51 987 654 321</a>
+                        </div>
+                    </div>
+
+                    <div class="info_card">
+                        <div class="info_icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info_text">
+                            <h3>Visítanos</h3>
+                            <p>Tienda Principal</p>
+                            <span class="info_address">Lima, Perú</span>
+                        </div>
+                    </div>
+
+                    <div class="info_card">
+                        <div class="info_icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info_text">
+                            <h3>Horario</h3>
+                            <p>Lunes a Sábado</p>
+                            <span class="info_address">9:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <form class="contacto_form" action="#" method="POST">
+                    <div class="form_row">
+                        <div class="form_cuerpo">
+                            <label class="form-label" for="nombre">Nombre Completo</label>
+                            <input class="form-input-txt" type="text" id="nombre" name="nombre"
+                                placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="form_cuerpo">
+                            <label class="form-label" for="correo">Correo Electrónico</label>
+                            <input class="form-input-txt" type="email" id="correo" name="correo"
+                                placeholder="Ej. juan@correo.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form_cuerpo">
+                        <label class="form-label" for="motivo">Motivo de consulta</label>
+                        <select class="form-input" id="motivo" name="motivo" required>
+                            <option value="">Selecciona una opción...</option> 
+                            <option value="productos">Información de Productos</option>
+                            <option value="soporte">Soporte Técnico</option>
+                            <option value="ventas">Ventas</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form_cuerpo">
+                        <label class="form-label" for="mensaje">Mensaje</label>
+                        <textarea class="form-textarea" id="mensaje" name="mensaje" rows="6"
+                            placeholder="Escribe tu consulta en detalle..." required></textarea>
+                    </div>
+
+                    <button class="btn_EnviarMensaje" type="submit">
+                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <!-- MODAL GRACIAS -->
+                <div id="modal-contacto" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Ferretería Colorín</h3>
+                            <button type="button" class="modal-close" onclick="cerrarAlerta()">&times;</button>
+                        </div>
+
+                        <p>¡Gracias por contactarnos!</p>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn-modal btn-confirmar"
+                                onclick="cerrarAlerta()">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+    </main>
+<div id="site-footer"></div>
+<div id="site-cart"></div>
+</body>
+</html>

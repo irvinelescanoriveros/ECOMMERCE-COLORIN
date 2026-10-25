@@ -1,0 +1,54 @@
+/* 
+MENSAJE ANIMADO
+*/
+.mensaje_animado_container {
+    background: #3e5bcd;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mensaje_animado {
+    display: flex;
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    gap: 300px;
+    width: max-content;
+    color: white;
+
+    animation: moverTexto 30s linear infinite;
+}
+
+.mensaje_animado span {
+    flex-shrink: 0;
+    font-size: 22px;
+}
+
+/*
+ANIMACIÓN
+*/
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moverTexto {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-48%));
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar compra | Ferretería Colorín</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilo_global.css">
+    <link rel="stylesheet" href="css/estilo_header.css">
+    <link rel="stylesheet" href="css/estilo_seccion_footer.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_compra.css">
+    <link rel="stylesheet" href="css/estilo_modal.css">
+    <link rel="stylesheet" href="css/reponsive.css">
+    <link rel="stylesheet" href="css/estilo_colorin_tienda.css">
+    <link rel="stylesheet" href="css/estilo_checkout.css">
+    <link rel="stylesheet" href="css/estilo_botones.css">
+    <link rel="stylesheet" href="css/estilo_panel_de_productos.css">
+    <link rel="icon" href="img/Logo_Chip.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/menu_categorias.js" defer></script>
+    <script src="js/carro_de_compras.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+</head>
+<body data-page="checkout">
+    <div id="site-header"></div>
+    <main class="checkout-main">
+        <div class="checkout-breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><a href="catalogo.html">Catálogo</a><i class="fa-solid fa-chevron-right"></i><span>Finalizar compra</span></div>
+        <div class="checkout-title"><div><span class="section-kicker">TU PEDIDO</span><h1>Finalizar compra</h1></div><a href="catalogo.html"><i class="fa-solid fa-arrow-left"></i> Seguir comprando</a></div>
+        <nav class="checkout-steps" aria-label="Pasos de compra">
+            <div class="checkout-step activo" data-step-indicator="1"><span>1</span><div><strong>Datos personales</strong><small>Información del comprador</small></div></div>
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="checkout-step" data-step-indicator="2"><span>2</span><div><strong>Entrega</strong><small>¿Cómo recibirás tu pedido?</small></div></div>
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="checkout-step" data-step-indicator="3"><span>3</span><div><strong>Pago</strong><small>Elige un medio de pago</small></div></div>
+        </nav>
+
+        <div class="checkout-layout">
+            <div class="checkout-form-column">
+                <section class="checkout-panel" data-checkout-step="1">
+                    <div class="checkout-panel-heading"><span class="checkout-section-icon"><i class="fa-regular fa-user"></i></span><div><h2>Datos personales</h2><p>Completa la información para continuar con tu compra.</p></div></div>
+                    <form id="form-checkout-personal" class="checkout-form">
+                        <div class="checkout-fields-grid">
+                            <div class="checkout-field campo-completo"><label for="checkout-email">Correo electrónico <b>*</b></label><input id="checkout-email" name="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" required><small>Si iniciaste sesión, completamos el correo y los datos guardados en tu perfil. Revísalos antes de continuar.</small></div>
+                            <div class="checkout-field"><label for="checkout-telefono">Teléfono / Móvil <b>*</b></label><input id="checkout-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required></div>
+                            <div class="checkout-field"><label for="checkout-nombre">Nombre <b>*</b></label><input id="checkout-nombre" name="nombre" autocomplete="given-name" required><small class="checkout-error" data-error-for="checkout-nombre" hidden>Este campo es obligatorio.</small></div>
+                            <div class="checkout-field"><label for="checkout-apellidos">Apellidos <b>*</b></label><input id="checkout-apellidos" name="apellidos" autocomplete="family-name" required></div>
+                            <div class="checkout-field"><label for="checkout-tipo-documento">Tipo de documento <b>*</b></label><select id="checkout-tipo-documento" name="tipoDocumento" required><option value="DNI" selected>DNI</option><option value="CE">Carné de extranjería</option></select></div>
+                            <div class="checkout-field"><label for="checkout-documento">Documento de identidad <b>*</b></label><input id="checkout-documento" name="documento" inputmode="numeric" maxlength="12" required></div>
+                        </div>
+                        <label class="checkout-invoice-toggle"><span><strong>Deseo factura</strong><small>Emitir comprobante a nombre de una empresa</small></span><input id="checkout-factura" type="checkbox" role="switch"><i aria-hidden="true"></i></label>
+                        <div id="checkout-empresa" class="checkout-fields-grid invoice-fields" hidden>
+                            <div class="checkout-field"><label for="checkout-ruc">RUC <b>*</b></label><input id="checkout-ruc" name="ruc" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" placeholder="11 dígitos"></div>
+                            <div class="checkout-field"><label for="checkout-razon-social">Razón social <b>*</b></label><input id="checkout-razon-social" name="razonSocial" autocomplete="organization"></div>
+                        </div>
+                        <label class="checkout-terms"><input id="checkout-acepta" type="checkbox" required><span>Acepto las <a href="#politicas" data-terms-open>políticas de uso de datos personales</a> y los <a href="#terminos" data-terms-open>términos y condiciones</a>. <b>*</b></span></label>
+                        <p class="checkout-inline-message" id="personal-message" role="status" aria-live="polite"></p>
+                        <div class="checkout-actions"><a href="catalogo.html" class="checkout-back-link">Volver al catálogo</a><button class="checkout-primary" type="submit">Continuar <i class="fa-solid fa-arrow-right"></i></button></div>
+                    </form>
+                </section>
+
+                <section class="checkout-panel" data-checkout-step="2" hidden>
+                    <div class="checkout-panel-heading"><span class="checkout-section-icon"><i class="fa-solid fa-truck-fast"></i></span><div><h2>Entrega</h2><p>Elige cómo quieres recibir tu pedido.</p></div></div>
+                    <form id="form-checkout-entrega" class="checkout-form">
+                        <div class="delivery-options"><label class="delivery-option activo"><input type="radio" name="metodoEntrega" value="domicilio" checked><span><i class="fa-solid fa-house"></i><strong>Enviar a domicilio</strong></span></label><label class="delivery-option"><input type="radio" name="metodoEntrega" value="tienda"><span><i class="fa-solid fa-shop"></i><strong>Retirar en tienda</strong></span></label></div>
+                        <div id="delivery-address-fields">
+                            <h3 class="checkout-subheading">¿Dónde entregamos tu pedido?</h3>
+                            <div class="checkout-field saved-address-field"><label for="saved-address-select">Usar una dirección guardada</label><select id="saved-address-select"><option value="">Ingresar una dirección nueva</option></select><small id="saved-address-help">Si tienes una dirección predeterminada, se cargará automáticamente.</small></div>
+                            <div class="checkout-fields-grid geo-fields">
+                                <div class="checkout-field"><label for="delivery-departamento">Departamento <b>*</b></label><select id="delivery-departamento" required><option value="">Selecciona</option><option>Lima</option><option>Callao</option><option>Arequipa</option></select></div>
+                                <div class="checkout-field"><label for="delivery-provincia">Provincia <b>*</b></label><select id="delivery-provincia" required disabled><option value="">Selecciona</option></select></div>
+                                <div class="checkout-field"><label for="delivery-distrito">Distrito <b>*</b></label><select id="delivery-distrito" required disabled><option value="">Selecciona</option></select></div>
+                            </div>
+                            <div class="checkout-fields-grid address-fields">
+                                <div class="checkout-field campo-completo"><label for="delivery-direccion">Dirección <b>*</b></label><input id="delivery-direccion" autocomplete="street-address" placeholder="Av., calle, jirón y número" required></div>
+                                <div class="checkout-field"><label for="delivery-piso">Piso y/o Dpto.</label><input id="delivery-piso" placeholder="Opcional"></div>
+                                <div class="checkout-field"><label for="delivery-referencia">Referencia / Indicaciones de entrega <b>*</b></label><input id="delivery-referencia" placeholder="¿Cómo encontramos tu domicilio?" required></div>
+                            </div>
+                            <div class="delivery-estimate"><span class="delivery-truck"><i class="fa-solid fa-truck"></i></span><div><strong id="delivery-date-label">¡Llega mañana!</strong><small>Plazo referencial del prototipo, sujeto a confirmación.</small></div><button id="delivery-change-date" type="button">Cambiar fecha</button><input id="delivery-date" type="date" hidden></div>
+                            <p class="delivery-hours">Horario estimado: 8:00 a. m. a 8:00 p. m.</p>
+                        </div>
+                        <div id="delivery-pickup-fields" class="checkout-field pickup-field" hidden><label for="pickup-store">Punto de recojo <b>*</b></label><select id="pickup-store"><option value="">Selecciona un punto de recojo</option><option value="tienda-principal">Tienda principal de Ferretería Colorín (prototipo)</option></select><small>La dirección del punto se confirmará al conectar el sistema.</small></div>
+                        <p class="checkout-inline-message" id="delivery-message" role="status" aria-live="polite"></p>
+                        <div class="checkout-actions"><button class="checkout-secondary" type="button" data-checkout-back="1"><i class="fa-solid fa-arrow-left"></i> Atrás</button><button class="checkout-primary" id="delivery-continue" type="submit" disabled>Continuar <i class="fa-solid fa-arrow-right"></i></button></div>
+                    </form>
+                    <div class="delivery-seller">Vendido por <strong>Ferretería Colorín</strong></div>
+                </section>
+
+                <section class="checkout-panel" data-checkout-step="3" hidden>
+                    <div class="checkout-panel-heading"><span class="checkout-section-icon"><i class="fa-regular fa-credit-card"></i></span><div><h2>Pago</h2><p>Selecciona el medio de pago para tu pedido.</p></div><span class="checkout-invoice-summary" id="checkout-factura-resumen"></span></div>
+                    <form id="form-checkout-pago" class="checkout-form">
+                        <fieldset class="payment-methods"><legend>Métodos de pago</legend>
+                            <label class="payment-method"><input type="radio" name="metodoPago" value="sip-oh-credito"><span class="payment-logo payment-logo-oh">oh!</span><span><strong>Tarjeta de crédito Sip / Oh</strong><small>Pago con tarjeta de crédito</small></span><span class="radio-mark"></span></label>
+                            <label class="payment-method"><input type="radio" name="metodoPago" value="sip-oh-debito"><span class="payment-logo payment-logo-oh">oh!</span><span><strong>Tarjeta de débito Sip / Oh Pay</strong><small>Pago con tarjeta de débito</small></span><span class="radio-mark"></span></label>
+                            <label class="payment-method"><input type="radio" name="metodoPago" value="app-sip"><span class="payment-logo payment-logo-sip"><i class="fa-solid fa-mobile-screen-button"></i></span><span><strong>App Sip</strong><small>Pago desde la aplicación</small></span><span class="radio-mark"></span></label>
+                            <label class="payment-method"><input type="radio" name="metodoPago" value="interbank"><span class="payment-logo payment-logo-interbank">IBK</span><span><strong>Tarjetas Interbank</strong><small>Crédito o débito Interbank</small></span><span class="radio-mark"></span></label>
+                            <label class="payment-method"><input type="radio" name="metodoPago" value="otras-tarjetas" checked><span class="payment-logo payment-logo-card"><i class="fa-regular fa-credit-card"></i></span><span><strong>Otras tarjetas de crédito y débito</strong><small>Visa, Mastercard, American Express y Diners Club</small></span><span class="radio-mark"></span></label>
+                        </fieldset>
+                        <p class="checkout-demo-warning"><i class="fa-solid fa-circle-info"></i> Prototipo académico: no se solicitarán datos de tarjeta ni se realizará un cobro.</p>
+                        <p class="checkout-inline-message" id="payment-message" role="status" aria-live="polite"></p>
+                        <div class="checkout-actions"><button class="checkout-secondary" type="button" data-checkout-back="2"><i class="fa-solid fa-arrow-left"></i> Atrás</button><button class="checkout-primary" type="submit">Ir a pagar <i class="fa-solid fa-arrow-right"></i></button></div>
+                    </form>
+                </section>
+
+                <section id="checkout-finish" class="checkout-finish" hidden><span class="finish-icon"><i class="fa-solid fa-check"></i></span><span class="section-kicker">PEDIDO REGISTRADO</span><h1>¡Gracias por tu pedido!</h1><p id="finish-message">Tu pedido quedó registrado.</p><div class="finish-order-number">Número de pedido <strong id="finish-order-number"></strong></div><p class="finish-note">El pedido queda pendiente de pago. Este prototipo no realiza cobros ni modifica el inventario.</p><div class="checkout-actions"><a href="index.html" class="checkout-secondary">Volver al inicio</a><a href="cuenta.html#pedidos" class="checkout-primary">Ver mis pedidos <i class="fa-solid fa-arrow-right"></i></a></div></section>
+            </div>
+
+            <aside class="checkout-summary">
+                <div class="summary-heading"><h2>Resumen de compra</h2><span id="summary-item-count">0 productos</span></div>
+                <div class="summary-products" id="summary-products"></div>
+                <div class="summary-costs"><div><span>Subtotal</span><strong id="summary-subtotal">S/ 0.00</strong></div><div><span>Envío</span><strong id="summary-shipping">S/ 0.00</strong></div><div class="summary-total"><span>Total</span><strong id="summary-total">S/ 0.00</strong></div></div>
+                <p class="summary-secure"><i class="fa-solid fa-lock"></i> Resumen de pedido de demostración</p>
+                <a href="catalogo.html" class="summary-keep-shopping"><i class="fa-solid fa-arrow-left"></i> Seguir comprando</a>
+            </aside>
+        </div>
+    </main>
+    <div id="modal-politicas-checkout" class="modal"><div class="modal-content"><div class="modal-header"><h3>Políticas y términos</h3><button class="modal-close" data-checkout-close>&times;</button></div><p>Esta vista de demostración no envía datos personales. Las políticas y términos definitivos se publicarán cuando se conecte el backend de la tienda.</p><div class="modal-actions"><button class="btn-modal btn-confirmar" data-checkout-close>Entendido</button></div></div></div>
+    <div id="site-footer"></div>
+    <div id="site-cart"></div>
+</body>
+</html>

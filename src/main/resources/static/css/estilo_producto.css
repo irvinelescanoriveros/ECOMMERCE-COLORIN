@@ -1,0 +1,75 @@
+.product-page { min-height: 60vh; max-width: 1240px; margin: 0 auto; padding: 22px 24px 70px; }
+.product-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 4px 0 24px; color: #80909c; font-size: .76rem; }
+.product-breadcrumb a { color: #526b7e; text-decoration: none; }
+.product-breadcrumb a:hover { color: #ed7a32; }
+.product-breadcrumb i { color: #b1bdc5; font-size: .62rem; }
+.product-breadcrumb span { overflow: hidden; max-width: 520px; color: #526270; text-overflow: ellipsis; white-space: nowrap; }
+.product-detail-card { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr); gap: clamp(24px, 5vw, 70px); width: 100%; max-width: none; padding: 28px; border: 1px solid #e5e9ec; border-radius: 10px; background: #fff; box-shadow: 0 5px 22px #17324d0c; }
+.product-gallery { min-width: 0; }
+.product-image-frame { display: grid; min-height: 440px; place-items: center; overflow: hidden; border: 1px solid #edf0f2; border-radius: 8px; background: linear-gradient(140deg,#fff,#f8fafb); }
+.product-main-image { width: 100%; height: 430px; object-fit: contain; transition: transform .25s ease; }
+.product-main-image:hover { transform: scale(1.035); }
+.product-gallery-caption { display: flex; justify-content: center; gap: 7px; margin-top: 9px; color: #8795a0; font-size: .7rem; }
+.product-buy-panel { display: flex; flex-direction: column; align-items: flex-start; padding: 8px 4px; }
+.product-brand { margin-bottom: 9px; color: #ed7a32; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.product-buy-panel .catalogo_cantenido_TITULO { margin: 0; color: #17324d; font-size: clamp(1.4rem, 2.3vw, 2rem); line-height: 1.3; }
+.product-code { margin: 12px 0 21px; color: #71808c; font-size: .78rem; }
+.product-code span { margin: 0 6px; color: #bdc6cc; }
+.product-buy-panel .product-detail-price { margin: 0; color: #17324d; font-size: 1.9rem; line-height: 1.2; }
+.product-unit { margin: 5px 0 20px; color: #71808c; font-size: .8rem; }
+.product-stock { display: flex; align-items: center; gap: 10px; width: 100%; padding: 13px 14px; border: 1px solid #dcebe1; border-radius: 7px; background: #f7fbf8; }
+.stock-dot { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: #32935c; box-shadow: 0 0 0 4px #32935c20; }
+.product-stock div { display: grid; gap: 2px; }
+.product-stock strong { color: #286b45; font-size: .8rem; }
+.product-stock small { color: #667786; font-size: .72rem; }
+.product-cart-stock { display: none; }
+.product-add-button { width: 100%; min-height: 49px; margin-top: 17px; border-radius: 6px; background: #ed7a32; font-size: .92rem; }
+.product-add-button:hover { background: #d96521; }
+.product-demo-note { display: flex; align-items: flex-start; gap: 7px; margin: 13px 0 0; color: #7a8994; font-size: .7rem; line-height: 1.5; }
+.product-demo-note i { margin-top: 2px; color: #e28b4e; }
+.product-info-section { max-width: 1000px; margin: 50px auto 0; }
+.product-section-heading { margin-bottom: 18px; }
+.product-section-heading .section-kicker { color: #ed7a32; }
+.product-section-heading h2 { margin: 4px 0 0; color: #17324d; font-size: 1.55rem; }
+.product-intro { margin: 0 0 26px; color: #526270; font-size: .9rem; }
+.product-description-copy { padding: 22px 24px; border-left: 3px solid #ed7a32; border-radius: 0 7px 7px 0; background: #fff8f2; }
+.product-description-copy h3 { margin-bottom: 8px; color: #17324d; font-size: 1rem; }
+.product-description-copy p { color: #526270; font-size: .86rem; line-height: 1.8; }
+.tech-heading { margin: 38px 0 15px; }
+.product-spec-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border: 1px solid #e5e9ec; border-radius: 8px; overflow: hidden; }
+.spec-item { display: grid; grid-template-columns: minmax(115px, .8fr) 1fr; align-items: start; gap: 16px; padding: 12px 15px; border-bottom: 1px solid #edf0f2; }
+.spec-item:nth-child(4n + 1), .spec-item:nth-child(4n + 2) { background: #f8fafb; }
+.spec-item dt { color: #71808c; font-size: .76rem; }
+.spec-item dd { margin: 0; color: #344a5a; font-size: .78rem; font-weight: 600; }
+.product-extra { margin-top: 10px; border: 1px solid #e5e9ec; border-radius: 7px; background: #fff; }
+.product-extra summary { display: flex; align-items: center; justify-content: space-between; padding: 15px 17px; color: #17324d; font-size: .83rem; font-weight: 600; cursor: pointer; list-style: none; }
+.product-extra summary::-webkit-details-marker { display: none; }
+.product-extra summary i { color: #ed7a32; font-size: .72rem; transition: transform .2s; }
+.product-extra[open] summary i { transform: rotate(180deg); }
+.product-extra > p { padding: 0 17px 17px; color: #526270; font-size: .82rem; line-height: 1.8; white-space: pre-line; }
+.product-back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 25px; color: #235b79; font-size: .83rem; font-weight: 600; text-decoration: none; }
+.product-back-link:hover { color: #ed7a32; }
+.producto-no-encontrado { display: grid; justify-items: center; padding: 85px 20px; text-align: center; }
+.producto-no-encontrado > i { color: #ed7a32; font-size: 2.6rem; }
+.producto-no-encontrado h1 { margin: 14px 0 5px; color: #17324d; font-size: 1.5rem; }
+.producto-no-encontrado p { color: #667786; font-size: .86rem; }
+.detalle-volver { margin-top: 16px; padding: 11px 17px; border-radius: 5px; color: white; background: #235b79; font-size: .84rem; font-weight: 600; text-decoration: none; }
+
+@media (max-width: 760px) {
+    .product-page { padding: 15px 15px 50px; }
+    .product-detail-card { grid-template-columns: 1fr; gap: 22px; padding: 17px; }
+    .product-image-frame { min-height: 320px; }
+    .product-main-image { height: 315px; }
+    .product-buy-panel { padding: 3px; }
+    .product-buy-panel .catalogo_cantenido_TITULO { font-size: 1.55rem; }
+    .product-info-section { margin-top: 34px; }
+}
+@media (max-width: 520px) {
+    .product-image-frame { min-height: 270px; }
+    .product-main-image { height: 265px; }
+    .product-spec-grid { grid-template-columns: 1fr; }
+    .spec-item:nth-child(2n) { background: #f8fafb; }
+    .spec-item:nth-child(4n + 1), .spec-item:nth-child(4n + 2) { background: #fff; }
+    .spec-item:nth-child(2n + 1) { background: #f8fafb; }
+    .spec-item { grid-template-columns: minmax(120px, .8fr) 1fr; }
+}

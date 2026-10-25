@@ -1,0 +1,69 @@
+/* 
+SECCIÓN NOSOTROS
+*/
+
+.section_nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    padding: 80px 100px;
+    background: #f3f4f6ee;
+
+    flex-wrap: wrap;
+}
+
+.nosotros_imagen {
+    flex: 1;
+    min-width: 320px;
+}
+
+.nosotros_imagen img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.nosotros_imagen img:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+.nosotros_contenido {
+    flex: 1;
+    min-width: 320px;
+}
+
+.nosotros_titulo {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.nosotros_texto {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.nosotros_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nosotros_lista p {
+    font-size: 1rem;
+    color: #1e3a8a;
+    font-weight: 500;
+}
+
+.nosotros_contenido:hover {
+    cursor: default;
+}

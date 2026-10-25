@@ -1,0 +1,968 @@
+/* 
+RESET Y BASE
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* 
+MENSAJE ANIMADO
+*/
+.mensaje_animado_container {
+    background: #3e5bcd;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mensaje_animado {
+    display: flex;
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    gap: 300px;
+    width: max-content;
+    color: white;
+
+    animation: moverTexto 30s linear infinite;
+}
+
+.mensaje_animado span {
+    flex-shrink: 0;
+    font-size: 22px;
+}
+
+/*
+ANIMACIÓN
+*/
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moverTexto {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-48%));
+    }
+}
+
+/* 
+HEADER 
+*/
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    text-decoration: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link.active {
+    color: white;
+    color: #2563eb;
+    border-radius: 6px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* 
+SECCIONES GENERALES
+*/
+.section {
+    padding: 80px 40px;
+}
+
+.section_contentido {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section_titulo {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
+    animation: aparecer 1s ease;
+}
+
+.section_descripcion {
+    color: #ffffff;
+    font-size: 1.04rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+INICIO
+*/
+.section_Inicio {
+    background: linear-gradient(rgba(37, 99, 235, 0.5), rgba(49, 81, 243, 0.5)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 25px 0;
+    cursor: default;
+}
+
+/* 
+BENEFICIOS
+*/
+
+.section_Beneficios {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.section_Beneficios_titulo {
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: default;
+}
+
+.linea {
+    width: 80px;
+    height: 4px;
+    background: #2563eb;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.linea2 {
+    width: 100%;
+    height: 4px;
+    background: #2563eb;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.beneficio_cuadros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    margin: 25px 0;
+}
+
+.beneficio_contenido {
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(171, 167, 167, 0.08);
+    transition: 0.3s;
+    gap: 12px;
+    margin: 0 50px;
+}
+
+.beneficio_contenido:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+    cursor: default;
+}
+
+.beneficio_contenido_icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.beneficio_contenido_titulo {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.beneficio_contenido_descripcion {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* 
+SECCIÓN NOSOTROS
+*/
+
+.section_nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    padding: 80px 100px;
+    background: #f3f4f6ee;
+
+    flex-wrap: wrap;
+}
+
+.nosotros_imagen {
+    flex: 1;
+    min-width: 320px;
+}
+
+.nosotros_imagen img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.nosotros_imagen img:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+.nosotros_contenido {
+    flex: 1;
+    min-width: 320px;
+}
+
+.nosotros_titulo {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.nosotros_texto {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.nosotros_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nosotros_lista p {
+    font-size: 1rem;
+    color: #1e3a8a;
+    font-weight: 500;
+}
+
+.nosotros_contenido:hover {
+    cursor: default;
+}
+
+
+/* 
+CATÁLOGO
+*/
+
+.section_content_1 {
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.section_titulo_1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_1 {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.section_content_1_2 {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.section_titulo_1_2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_1_2 {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.section_ver_catalogo {
+    margin-right: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ver_catalogo {
+    text-decoration: none;
+    font-weight: 600;
+    text-decoration-color: #2563eb;
+}
+
+.ver_catalogo:hover {
+    color: #3730a3;
+}
+
+.catalogo_Madre {
+    margin: 0px 60px 0px 75px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    cursor: default;
+}
+
+.catalogo_Madre_2 {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    gap: 25px;
+    cursor: default;
+}
+
+/*
+PRODUCTOS
+*/
+
+.catalogo_cantenido {
+    background: white;
+    width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo_cantenido:hover {
+    transform: scale(1.03);
+}
+
+.catalogo_cantenido_imagen_wrapper {
+    height: 180px;
+    overflow: hidden;
+}
+
+.catalogo_cantenido_imagen {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease
+}
+
+.catalogo_cantenido:hover .catalogo_cantenido_imagen {
+    transform: scale(1.28) rotate(-8deg);
+}
+
+.catalogo_cantenido_body {
+    padding: 20px;
+    flex: 1;
+}
+
+.catalogo_cantenido_badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_TITULO {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_DESCRIPCION {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_PRECIO {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.catalogo_cantenido_STOCK {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.ver_catalogo {
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+/* 
+CATALAGO COMPLETO
+*/
+.catalogo_controls {
+    padding: 10px 16px;
+    margin: 0px 100px 25px 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    background: white;
+    border-radius: 15px;
+}
+
+/* IZQUIERDA */
+.controls_izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+/* BUSCADOR */
+.buscador_box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 10px 16px;
+    width: 520px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.buscador_box .icono {
+    margin-right: 10px;
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+#buscador {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 15px;
+}
+
+.buscador_box:focus-within {
+    border: 1px solid #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* FILTROS*/
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.filtros button {
+    border: 1px solid #e2e1e1;
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.filtros button:hover {
+    background: #e5e7eb;
+}
+
+.filtros button.activo {
+    background: #6366f1;
+    color: white;
+    border: none;
+}
+
+/* 
+ACTIVO 
+*/
+.filtros button.activo {
+    background: #6366f1;
+    color: white;
+    border: none;
+}
+
+/* 
+VISTA
+*/
+.vista {
+    display: flex;
+    background: #E2E8F0;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 5px;
+}
+
+.vista button {
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font: 22px;
+}
+
+.vista button.activo {
+    background: rgb(255, 255, 255);
+    color: #4f46e5;
+}
+
+/* 
+TABLA PRODUCTOS
+*/
+
+.categoria_icon {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.section_content_2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section_titulo_2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_2 {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.table-wrapper {
+    margin: 0px 100px 0px 100px;
+    overflow-x: auto;
+}
+
+.productos_tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.productos_tabla_head {
+    background: #1f2937;
+    color: white;
+}
+
+.productos_tabla_header,
+.productos_tabla_cell {
+    padding: 12px 15px;
+    text-align: left;
+    width: 60px;
+}
+
+.productos_tabla_row {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.productos_tabla_row:hover {
+    background: #f8f9fa;
+}
+
+.productos_tabla_cell_PRECIO {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.productos_tabla_cell_STOCK {
+    color: #16a34a;
+}
+
+/* 
+BOTONES
+*/
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn_catalago {
+    width: 60%;
+    background: #2563eb;
+    color: white;
+    transition: 0.3s;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    margin-bottom: 15px;
+    transition: 0.3s;
+
+}
+
+.btn_catalago:hover {
+    background: #1d4ed8;
+}
+
+
+.btn_EnviarMensaje {
+    background: #2563eb;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn_EnviarMensaje:hover {
+    background: #1d4ed8;
+}
+
+/* 
+FORMULARIO
+*/
+
+.section_content_3 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section_titulo_3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_3 {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.contacto_form {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.form_cuerpo {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #2563eb;
+}
+
+.form_Mensaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+FOOTER
+*/
+.site-footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 
+SCROLLBAR
+*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 15px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+    cursor: pointer;
+    background-clip: content-box;
+}
+
+/*
+   RESPONSIVE TABLET
+*/
+@media (max-width: 1024px) {
+
+    .catalogo_Madre,
+    .catalogo_Madre_2 {
+        justify-content: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .catalogo_controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls_izquierda {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buscador_box {
+        width: 100%;
+    }
+
+    .filtros {
+        flex-wrap: wrap;
+    }
+
+    .section_Beneficios {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .catalogo_cantenido {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+/*
+   RESPONSIVE CELULAR
+*/
+@media (max-width: 768px) {
+
+    /* INICIO */
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-list {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section_titulo {
+        font-size: 2.5rem;
+    }
+
+    .section_titulo_1,
+    .section_titulo_1_2,
+    .section_titulo_3 {
+        font-size: 1.7rem;
+    }
+
+    .section_descripcion,
+    .section_descripcion_1,
+    .section_descripcion_1_2,
+    .section_descripcion_3 {
+        font-size: 0.95rem;
+    }
+
+    .mensaje_animado {
+        gap: 150px;
+        font-size: 0.5rem;
+    }
+
+    .mensaje_animado span {
+        font-size: 18px;
+    }
+
+    /* SECCIONES */
+    .section {
+        padding: 50px 20px;
+    }
+
+    .section_Beneficios {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .beneficio_cuadros {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .beneficio_contenido {
+        margin: 0;
+    }
+
+    .section_nosotros {
+        padding: 50px 25px;
+        gap: 35px;
+    }
+
+    .nosotros_titulo {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .nosotros_texto {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .nosotros_lista {
+        align-items: center;
+    }
+
+    /* PRODUCTOS DESTACADOS */
+    .catalogo_Madre {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin: 0;
+    }
+
+    .catalogo_Madre_2 {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .catalogo_cantenido {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    /* CONTROLES CATALOGO */
+    .catalogo_controls {
+        margin: 15px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls_izquierda {
+        width: 100%;
+    }
+
+    .buscador_box {
+        width: 100%;
+    }
+
+    .filtros {
+        display: none;
+    }
+
+    .vista {
+        display: none;
+    }
+
+    /* TITULO CATALOGO */
+    .section_content_1_2 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .table-wrapper {
+        margin: 15px;
+        overflow-x: auto;
+    }
+
+    .productos_tabla {
+        min-width: 700px;
+    }
+
+    /* FORMULARIO */
+    .contacto_form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}

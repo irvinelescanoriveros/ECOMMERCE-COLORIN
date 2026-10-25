@@ -1,0 +1,82 @@
+/* 
+PANEL LATERAL 
+*/
+.carrito-side-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    z-index: 2000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-side-panel.active {
+    right: 0;
+}
+
+.carrito-header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-title h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.carrito-cuerpo {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.carrito-footer {
+    padding: 25px;
+    border-top: 1px solid #f0f0f0;
+    background: #fff;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.transaccion-segura {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 15px;
+}
+
+.carrito-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(2px);
+    display: none;
+    z-index: 1999;
+}
+
+.carrito-overlay.active {
+    display: block;
+}

@@ -1,0 +1,86 @@
+/*
+PRODUCTO DESTACADOS
+*/
+
+.catalogo_cantenido {
+    background: white;
+    width: 280px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo_cantenido:hover {
+    transform: scale(1.03);
+}
+
+.catalogo_cantenido_acciones{
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.catalogo_cantenido_imagen_wrapper {
+    height: 180px;
+    overflow: hidden;
+}
+
+.catalogo_cantenido_imagen {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease
+}
+
+.catalogo_cantenido:hover .catalogo_cantenido_imagen {
+    transform: scale(1.28) rotate(-8deg);
+}
+
+.catalogo_cantenido_body {
+    padding: 20px;
+    flex: 1;
+}
+
+.catalogo_cantenido_badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_TITULO {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_DESCRIPCION {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.catalogo_cantenido_PRECIO {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.catalogo_cantenido_STOCK {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.ver_catalogo {
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 600;
+    transition: 0.3s;
+}

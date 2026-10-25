@@ -1,0 +1,93 @@
+/* 
+VISTA
+*/
+.vista {
+    display: flex;
+    background: #E2E8F0;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 5px;
+}
+
+.vista button {
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font: 22px;
+}
+
+.vista button.activo {
+    background: rgb(255, 255, 255);
+    color: #4f46e5;
+}
+
+/* 
+TABLA PRODUCTOS
+*/
+
+.categoria_icon {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.section_content_2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section_titulo_2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.section_descripcion_2 {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.table-wrapper {
+    margin: 0px 100px 50px 100px;
+    overflow-x: auto;
+}
+
+.productos_tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.productos_tabla_head {
+    background: #1f2937;
+    color: white;
+}
+
+.productos_tabla_header,
+.productos_tabla_cell {
+    padding: 12px 15px;
+    text-align: left;
+    width: 60px;
+}
+
+.productos_tabla_row {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.productos_tabla_row:hover {
+    background: #f8f9fa;
+}
+
+.productos_tabla_cell_PRECIO {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.productos_tabla_cell_STOCK {
+    color: #16a34a;
+}
