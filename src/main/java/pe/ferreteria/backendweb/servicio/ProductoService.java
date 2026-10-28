@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.ferreteria.backendweb.servicio;
 
-/**
- *
- * @author fofas
- */
+import java.util.List;
+import java.util.Map;
+import org.springframework.stereotype.Service;
+import pe.ferreteria.backendweb.dao.ProductoDAO;
+
+@Service
 public class ProductoService {
-    
+
+    private final ProductoDAO productoDAO;
+
+    public ProductoService(ProductoDAO productoDAO) {
+        this.productoDAO = productoDAO;
+    }
+
+    public List<Map<String, Object>> listarProductosDisponibles() {
+        return productoDAO.listarProductosDisponibles();
+    }
 }
