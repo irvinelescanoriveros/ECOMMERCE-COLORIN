@@ -4,7 +4,7 @@
 
 Sistema web para la Ferretería Colorín que permite consultar productos, buscar artículos, gestionar una cuenta de cliente, registrar direcciones y realizar pedidos en línea.
 
-El frontend está integrado con un backend desarrollado en Java y Spring Boot, conectado a una base de datos MySQL.
+El frontend está integrado con un backend desarrollado en Java y Spring Boot, conectado a una base de datos MySQL compartida con el sistema de escritorio de Ferretería Colorín.
 
 El proyecto incluye un prototipo funcional de ventas en línea con simulación de aprobación y rechazo de pagos.
 
@@ -12,12 +12,39 @@ El proyecto incluye un prototipo funcional de ventas en línea con simulación d
 
 - **Frontend:** HTML5, CSS3 y JavaScript.
 - **Backend:** Java y Spring Boot.
+- **Arquitectura del backend:** Controller, Service y DAO.
 - **Acceso a datos:** JdbcTemplate.
 - **Base de datos:** MySQL.
 - **Comunicación:** API REST mediante HTTP.
 - **Almacenamiento del navegador:** localStorage y sessionStorage.
 
-## 3. Estructura del frontend
+## 3. Arquitectura del backend
+
+El backend utiliza una arquitectura por capas que separa la recepción de solicitudes, la lógica de negocio y el acceso a la base de datos.
+
+**Flujo general:**
+
+`Frontend → Controller → Service → DAO → MySQL`
+
+### Controller (Controlador)
+
+Recibe las solicitudes HTTP del frontend, procesa los parámetros de entrada y devuelve las respuestas de la API REST.
+
+### Service (Servicio)
+
+Contiene la lógica de negocio y coordina las operaciones necesarias antes de acceder a los datos o devolver una respuesta.
+
+### DAO (Data Access Object)
+
+Se encarga de ejecutar las consultas SQL y las operaciones de acceso a datos mediante JdbcTemplate.
+
+### Base de datos
+
+MySQL almacena la información persistente del sistema. El sitio web y el sistema de escritorio utilizan la misma base de datos.
+
+Esta separación facilita el mantenimiento del código y permite distinguir las responsabilidades de cada capa.
+
+## 4. Estructura del frontend
 
 ### Páginas HTML
 
@@ -38,7 +65,7 @@ El proyecto incluye un prototipo funcional de ventas en línea con simulación d
 - `cuenta.js`: funcionalidades de la cuenta del cliente.
 - `checkout.js`: validación y registro de pedidos.
 
-## 4. Funcionalidades principales
+## 5. Funcionalidades principales
 
 - Consulta de productos, precios, marcas, categorías y stock disponible.
 - Búsqueda y navegación por el catálogo.
@@ -56,7 +83,7 @@ El proyecto incluye un prototipo funcional de ventas en línea con simulación d
 
 Las categorías pueden incluir información definida en JavaScript, mientras que los productos, precios y existencias se consultan mediante el backend.
 
-## 5. API REST
+## 6. API REST
 
 | Método | Endpoint | Función |
 |---|---|---|
@@ -78,9 +105,9 @@ Las categorías pueden incluir información definida en JavaScript, mientras que
 | PUT | `/api/pedidos-web/{id}/simular-despacho` | Simular el despacho del pedido. |
 | PUT | `/api/pedidos-web/{id}/simular-entrega` | Simular la entrega del pedido. |
 
-Las operaciones que requieren autenticación utilizan la sesión del backend para identificar al cliente.
+Las operaciones que requieren autenticación utilizan la sesión del backend para identificar al cliente. Los endpoints indicados corresponden a las rutas documentadas del proyecto; cualquier cambio en las rutas del código debe reflejarse en esta tabla.
 
-## 6. Flujo de compra
+## 7. Flujo de compra
 
 1. El cliente selecciona productos y los agrega al carrito.
 2. Inicia sesión o crea una cuenta.
@@ -95,7 +122,7 @@ La aprobación y el rechazo del pago son simulaciones académicas. El sistema no
 
 El backend valida el stock y calcula los importes del pedido antes de registrarlo; los totales mostrados por el frontend son informativos.
 
-## 7. Almacenamiento de datos
+## 8. Almacenamiento de datos
 
 ### MySQL
 
@@ -111,7 +138,7 @@ Se utiliza para información temporal de la interfaz, como datos auxiliares del 
 
 La autenticación real se gestiona mediante la sesión del backend. Los datos almacenados en el navegador sirven como apoyo para la interfaz y no sustituyen la autenticación del servidor.
 
-## 8. Ejecución del proyecto
+## 9. Ejecución del proyecto
 
 1. Configurar MySQL y verificar las credenciales de conexión del backend.
 2. Ejecutar la aplicación Spring Boot en el puerto `8080`.
@@ -122,7 +149,7 @@ La autenticación real se gestiona mediante la sesión del backend. Los datos al
 
 Las funciones que dependen de la API requieren que el backend y la base de datos estén disponibles.
 
-## 9. Limitaciones
+## 10. Limitaciones
 
 - Los pagos no se procesan mediante una entidad financiera real.
 - El despacho y la entrega son simulados.
@@ -130,13 +157,13 @@ Las funciones que dependen de la API requieren que el backend y la base de datos
 - Las imágenes de productos son referenciales y pueden requerir recursos estáticos adicionales.
 - Las funcionalidades que dependen de datos persistentes requieren conexión con el backend y MySQL.
 
-## 10. Alcance del proyecto
+## 11. Alcance del proyecto
 
 El proyecto comprende un sitio web informativo y un prototipo funcional de comercio electrónico para Ferretería Colorín. Permite consultar productos, administrar una cuenta de cliente, registrar pedidos y demostrar el flujo de ventas integrado con el inventario del sistema.
 
 La integración con bancos, los pagos reales y la logística automatizada quedan fuera del alcance actual.
 
-## 11. Base de datos
+## 12. Base de datos
 
 El script SQL de la base de datos se encuentra en el repositorio del proyecto principal:
 
