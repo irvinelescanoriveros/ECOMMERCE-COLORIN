@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpSession;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,6 @@ import pe.ferreteria.backendweb.servicio.AprobacionPagoWebService;
 
 @RestController
 @RequestMapping("/api/pedidos-web")
-@CrossOrigin(origins = "*")
 public class AprobacionPagoWebController {
 
     private final AprobacionPagoWebService aprobacionPagoWebService;

@@ -145,6 +145,10 @@ La autenticación real se gestiona mediante la sesión del backend. Los datos al
 3. Servir el frontend mediante un servidor web local.
 4. Abrir `index.html` desde el servidor y probar las funcionalidades.
 
+El frontend se accede desde `http://localhost:8080`, mientras que el backend Spring Boot gestiona las solicitudes a la API REST y la conexión con MySQL.
+
+Las credenciales locales de conexión se configuran en `application-local.properties`, archivo excluido del repositorio mediante `.gitignore`.
+
 **Importante:** el frontend contiene solicitudes a `http://localhost:8080` y otras que utilizan rutas relativas como `/api/...`. Si el frontend y el backend se ejecutan en orígenes diferentes, se debe configurar correctamente CORS, el envío de cookies de sesión y las rutas de la API. Las solicitudes relativas necesitan que exista un origen común o un proxy configurado.
 
 Las funciones que dependen de la API requieren que el backend y la base de datos estén disponibles.
@@ -168,3 +172,15 @@ La integración con bancos, los pagos reales y la logística automatizada quedan
 El script SQL de la base de datos se encuentra en el repositorio del proyecto principal:
 
 - [Ver archivos SQL de Ferretería Colorín](https://github.com/irvinelescanoriveros/FERRETERIA-COLORIN/tree/main/database)
+
+## 13. Seguridad
+
+El proyecto incorpora las siguientes medidas de seguridad:
+
+- **Credenciales de conexión:** se utiliza un archivo `application-local.properties` para almacenar las credenciales locales de MySQL, evitando incluirlas en el repositorio.
+- **Usuario de base de datos:** la aplicación utiliza un usuario MySQL con permisos limitados para consultar y modificar los datos necesarios.
+- **Configuración CORS:** los orígenes permitidos se centralizan en `CorsConfig.java` y se configuran mediante la propiedad `app.cors.allowed-origins`.
+- **Protección de cookies:** las cookies de sesión utilizan las propiedades `HttpOnly` y `SameSite=Lax`.
+- **Manejo de errores:** se evita exponer mensajes internos y trazas de errores en las respuestas del servidor.
+- **Análisis estático:** se configura GitHub CodeQL para analizar el código fuente.
+- **Actualización de dependencias:** se configura Dependabot para revisar semanalmente las dependencias de Maven y GitHub Actions.
