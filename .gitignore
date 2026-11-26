@@ -33,3 +33,7 @@ build/
 .vscode/
 ### Configuración local ###
 application-local.properties
+
+
+nbactions.xml
+logs/
