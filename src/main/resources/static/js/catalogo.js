@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
         renderizarRutaCatalogo();
         aplicarBusquedaCatalogo();
     });
+    document.querySelectorAll(".vista button[data-vista]").forEach(boton => {
+    boton.addEventListener("click", () => cambiarVista(boton.dataset.vista));
+});
 
     let vistaGuardada = "grid";
     try { vistaGuardada = localStorage.getItem("vistaCatalogo") || "grid"; } catch { /* Usa la vista de fichas por defecto. */ }

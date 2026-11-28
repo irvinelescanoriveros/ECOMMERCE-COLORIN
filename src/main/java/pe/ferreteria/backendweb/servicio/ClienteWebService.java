@@ -122,7 +122,12 @@ public class ClienteWebService {
             return false;
         }
     }
+public int cambiarPassword(int idClienteWeb, String nuevaPassword)
+        throws GeneralSecurityException {
 
+    return clienteWebDAO.actualizarPassword(
+            idClienteWeb, generarHash(nuevaPassword));
+}
     // PERFIL
 
     public Map<String, Object> obtenerPerfil(int idClienteWeb) {

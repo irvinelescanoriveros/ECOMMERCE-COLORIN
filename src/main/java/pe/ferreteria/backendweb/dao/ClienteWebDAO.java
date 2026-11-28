@@ -33,7 +33,13 @@ public class ClienteWebDAO {
             WHERE correo = ? AND activo = 1
             """, correo);
     }
-
+public int actualizarPassword(int idClienteWeb, String hash) {
+    return jdbcTemplate.update("""
+        UPDATE Cliente_Web
+        SET password_hash = ?
+        WHERE id_cliente_web = ? AND activo = 1
+        """, hash, idClienteWeb);
+}
     // PERFIL DEL CLIENTE
 
     public Map<String, Object> obtenerPerfil(int idClienteWeb) {

@@ -10,3 +10,6 @@ if (formularioContacto) {
 function cerrarAlerta() {
     document.getElementById('modal-contacto')?.classList.remove('show');
 }
+document.querySelectorAll("[data-cerrar-alerta]").forEach(boton => {
+    boton.addEventListener("click", cerrarAlerta);
+});

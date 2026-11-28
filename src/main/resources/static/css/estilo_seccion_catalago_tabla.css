@@ -91,3 +91,6 @@ TABLA PRODUCTOS
 .productos_tabla_cell_STOCK {
     color: #16a34a;
 }
+#vista_tabla {
+    display: none;
+}

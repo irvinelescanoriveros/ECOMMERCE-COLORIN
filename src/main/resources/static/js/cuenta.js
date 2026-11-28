@@ -223,9 +223,87 @@ document.addEventListener("DOMContentLoaded", () => {
             boton.disabled = false;
         }
     });
+    // MOSTRAR / OCULTAR CONTRASEÑA (afecta solo a los campos del mismo formulario)
+    document.querySelectorAll("[data-mostrar-password]").forEach(casilla => {
+        casilla.addEventListener("change", () => {
+            const tipo = casilla.checked ? "text" : "password";
+            casilla.closest("form")
+                .querySelectorAll('input[name="password"], input[name="passwordConfirmar"]')
+                .forEach(campo => { campo.type = tipo; });
+        });
+    });
+        // RECUPERAR CONTRASEÑA (el código llega por correo simulado: se ve en el log del backend)
+    let correoRecuperacion = "";
 
     document.getElementById("btn-olvido")?.addEventListener("click", () => {
-        setMensaje("login-mensaje", "La recuperación por correo estará disponible cuando conectemos el backend.");
+        correoRecuperacion = "";
+        document.getElementById("form-recuperar-solicitar")?.reset();
+        document.getElementById("form-recuperar-confirmar")?.reset();
+        document.getElementById("form-recuperar-solicitar").hidden = false;
+        document.getElementById("form-recuperar-confirmar").hidden = true;
+        setMensaje("recuperar-mensaje", "");
+        const correoLogin = document.getElementById("login-correo").value.trim();
+        if (correoLogin) document.getElementById("recuperar-correo").value = correoLogin;
+        elegirPestana("recuperar");
+    });
+
+    document.querySelector("[data-ir-login-recuperar]")?.addEventListener("click", () => elegirPestana("ingresar"));
+
+    document.getElementById("form-recuperar-solicitar")?.addEventListener("submit", async event => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const correo = document.getElementById("recuperar-correo").value.trim().toLowerCase();
+        const boton = form.querySelector('button[type="submit"]');
+        boton.disabled = true;
+        setMensaje("recuperar-mensaje", "Enviando código...");
+        try {
+            const respuesta = await fetch("/api/clientes-web/recuperar/solicitar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ correo })
+            });
+            const resultado = await respuesta.json().catch(() => ({}));
+            if (!respuesta.ok) throw new Error(resultado.mensaje || "No pudimos enviar el código.");
+            correoRecuperacion = correo;
+            setMensaje("recuperar-mensaje", resultado.mensaje);
+            document.getElementById("form-recuperar-confirmar").hidden = false;
+            document.getElementById("recuperar-codigo").focus();
+        } catch (error) {
+            setMensaje("recuperar-mensaje", error.message || "No pudimos conectar con el backend.", true);
+        } finally {
+            boton.disabled = false;
+        }
+    });
+
+    document.getElementById("form-recuperar-confirmar")?.addEventListener("submit", async event => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const codigo = document.getElementById("recuperar-codigo").value.trim();
+        const password = document.getElementById("recuperar-password").value;
+        const confirmacion = document.getElementById("recuperar-password-confirmar").value;
+        if (password.length < 8) return setMensaje("recuperar-mensaje", "La contraseña debe tener al menos 8 caracteres.", true);
+        if (password !== confirmacion) return setMensaje("recuperar-mensaje", "Las contraseñas no coinciden. Revísalas y vuelve a intentar.", true);
+        const boton = form.querySelector('button[type="submit"]');
+        boton.disabled = true;
+        setMensaje("recuperar-mensaje", "Cambiando tu contraseña...");
+        try {
+            const respuesta = await fetch("/api/clientes-web/recuperar/confirmar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ correo: correoRecuperacion, codigo, password })
+            });
+            const resultado = await respuesta.json().catch(() => ({}));
+            if (!respuesta.ok) throw new Error(resultado.mensaje || "El código no es válido o venció.");
+            form.reset();
+            form.hidden = true;
+            document.getElementById("login-correo").value = correoRecuperacion;
+            elegirPestana("ingresar");
+            setMensaje("login-mensaje", resultado.mensaje);
+        } catch (error) {
+            setMensaje("recuperar-mensaje", error.message || "No pudimos conectar con el backend.", true);
+        } finally {
+            boton.disabled = false;
+        }
     });
     document.querySelector("[data-google-demo]")?.addEventListener("click", () => {
         setMensaje("login-mensaje", "El acceso con Google requiere configurar un servicio de autenticación en el backend.");

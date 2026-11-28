@@ -27,7 +27,7 @@
 
     <link rel="icon" href="img/Logo_Chip.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <script src="js/header.js" defer></script>
     <script src="js/menu_categorias.js" defer></script>
@@ -50,8 +50,8 @@
             <div class="linea2"></div>
             <!-- VISTAS -->
             <div class="vista">
-                <button class="activo" onclick="cambiarVista('grid')">⬜ Catálogo</button>
-                <button onclick="cambiarVista('tabla')">☰ Tabla</button>
+                <button class="activo" data-vista="grid">⬜ Catálogo</button>
+<button data-vista="tabla">☰ Tabla</button>
             </div>
         </div>
         <div class="catalogo_controls">
@@ -70,7 +70,7 @@
         <div id="catalogo-sin-resultados" class="catalogo-sin-resultados" hidden><span><i class="fa-solid fa-box-open"></i></span><h2>Aún no tenemos productos en esta categoría</h2><p>Estamos organizando el catálogo. Explora otra categoría o revisa todos los productos.</p><a href="catalogo.html">Ver todos los productos</a></div>
 
         <!-- Tabla Catalago -->
-        <div id="vista_tabla" style="display: none;">
+        <div id="vista_tabla">
             <div class="table-wrapper">
                 <table class="productos_tabla">
                     <thead class="productos_tabla_head">
